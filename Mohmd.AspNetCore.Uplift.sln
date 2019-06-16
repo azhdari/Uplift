@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mohmd.AspNetCore.Uplift", "Mohmd.AspNetCore.Uplift\Mohmd.AspNetCore.Uplift.csproj", "{21FF1703-156C-434D-AC11-9FF09956900F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mohmd.AspNetCore.Uplift.Example", "Mohmd.AspNetCore.Uplift.Example\Mohmd.AspNetCore.Uplift.Example.csproj", "{68139868-1286-4EB9-9FAA-03AF2A287B03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21FF1703-156C-434D-AC11-9FF09956900F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21FF1703-156C-434D-AC11-9FF09956900F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21FF1703-156C-434D-AC11-9FF09956900F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21FF1703-156C-434D-AC11-9FF09956900F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68139868-1286-4EB9-9FAA-03AF2A287B03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68139868-1286-4EB9-9FAA-03AF2A287B03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68139868-1286-4EB9-9FAA-03AF2A287B03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68139868-1286-4EB9-9FAA-03AF2A287B03}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9C904C8-D068-45E0-9F08-9C84111EB569}
+	EndGlobalSection
+EndGlobal

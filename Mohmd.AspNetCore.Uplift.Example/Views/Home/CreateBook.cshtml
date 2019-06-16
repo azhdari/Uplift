@@ -1,0 +1,21 @@
+﻿@model BookModel
+
+<form method="post" enctype="multipart/form-data">
+    <div class="container">
+        <div class="form-row">
+            <div class="col-form-label"><label asp-for="Name"></label></div>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-row">
+            <div class="col-form-label"><label asp-for="FrontImage"></label></div>
+            <input asp-for="FrontImage" type="file" />
+        </div>
+        <div class="form-row">
+            <div class="col-form-label"><label asp-for="ContentImages"></label></div>
+            <input asp-for="ContentImages" type="file" multiple />
+        </div>
+        <div class="form-row">
+            <button type="submit">Create</button>
+        </div>
+    </div>
+</form>
