@@ -6,6 +6,7 @@ using Mohmd.AspNetCore.Uplift.Helpers;
 using Mohmd.AspNetCore.Uplift.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Mohmd.AspNetCore.Uplift.Filters
@@ -19,7 +20,7 @@ namespace Mohmd.AspNetCore.Uplift.Filters
             IFormFileCollection files = bindingContext.HttpContext.Request.Form.Files;
             if (files.Count > 0)
             {
-                var modelFiles = files.Where(x => x.Name == bindingContext.ModelName).ToList();
+                var modelFiles = files.Where(x => Regex.IsMatch(x.Name, $@"^({bindingContext.ModelName})(\[\d+\])?$")).ToList();
                 List<FormFile> result = new List<FormFile>();
 
                 foreach (var file in modelFiles)
