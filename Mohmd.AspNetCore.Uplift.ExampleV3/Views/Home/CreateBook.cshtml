@@ -1,0 +1,73 @@
+﻿@model BookModel
+
+<form method="post" enctype="multipart/form-data">
+    <div class="container">
+        <div class="form-row">
+            <div class="col-form-label"><label asp-for="Name"></label></div>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-row">
+            <div class="col-form-label"><label asp-for="FrontImage"></label></div>
+            <input asp-for="FrontImage" type="file" />
+        </div>
+        <div class="form-row">
+            <div class="col-form-label"><label asp-for="ContentImages"></label></div>
+            <input asp-for="ContentImages" type="file" multiple />
+        </div>
+        <div class="form-row">
+            <button type="submit">Create</button>
+        </div>
+    </div>
+</form>
+
+<div id="add-files" method="post" class="drop-zone">
+    <div class="fallback">
+        <input type="file" asp-for="ContentImages" multiple />
+    </div>
+</div>
+
+<div id="log">
+    <div id="progress" class="font-weight-bold"></div>
+    <div id="done" class="font-weight-bold text-success" style="display: none">Uploaded</div>
+    <div id="error" class="font-weight-bold text-danger" style="display: none">Error</div>
+</div>
+
+<script src="~/lib/dropzone/dropzone.js"></script>
+<script>
+    (function () {
+        @*Dropzone.options.myAwesomeDropzone = {
+            url: "@Url.Action("CreateBook")",
+            paramName: "ContentImages", // The name that will be used to transfer the file
+            maxFilesize: 3, // MB,
+            method: "post",
+            uploadMultiple: true,
+            totaluploadprogress: function (file, percent, byteSents) {
+                $('#progress').text(percent);
+            },
+            successmultiple: function (file, reason) {
+                $("#done").show();
+            },
+            error: function (file, reason) {
+                $("#error").show();
+            }
+        };*@
+
+        var myDropzone = new Dropzone("div#add-files", {
+            url: "@Url.Action("CreateBook")",
+            paramName: "ContentImages", // The name that will be used to transfer the file
+            maxFilesize: 3, // MB,
+            method: "post",
+            uploadMultiple: true,
+            totaluploadprogress: function (file, totalBytes, totalBytesSents) {
+                var percent = totalBytesSents * 100 / totalBytes;
+                $('#progress').text(percent);
+            },
+            successmultiple: function (file, reason) {
+                $("#done").show();
+            },
+            error: function (file, reason) {
+                $("#error").show();
+            }
+        });
+    })();
+</script>
